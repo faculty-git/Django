@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load dict_filters %}
+    <h1>Welcome To Show Page</h1>
+    <!-- <p>Welcome {{firstName}} {{lastName}} </p>
+    <p>Contact Details : {{contactInfo.phone}} {{contactInfo|get_item:"e-mail" }} </p>
+    <p>Address : {{address.state}} {{address.city}} {{address.pincode}} </p>
+    <p>Salary Info : {{salaryInfo.basic}}, DA: {{salaryInfo.DA}} TDS: {{salaryInfo.TDS}} </p> -->
+    <table border="2px" cellspacing="0px" cellpadding="10px">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Basic</th>
+            <th>DA</th>
+        </tr>
+        <tr>
+            <td>{{firstName}} {{lastName}}</td>
+            <td>{{contactInfo|get_item:"e-mail" }}</td>
+            <td>{{contactInfo.phone}}</td>
+            <td>State : {{address.state}}, City : {{address.city}}, Pincode : {{address.pincode}}</td>
+            <td>{{salaryInfo.basic}}</td>
+            <td>{{salaryInfo.DA}}</td>
+        </tr>
+    </table>
+</body>
+</html>

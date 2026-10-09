@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% include 'assets/plugins.html' %}
+</head>
+<body>
+    {% include 'assets/header.html' %}
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>State : {{user.address.state}} , City : {{user.address.city}} , Pincode : {{user.address.pincode}}</td>
+            <td>
+                <ol type="i">
+                    {% for phone in user.phones %}
+                    <li>{{phone}}</li>
+                    {% endfor %}
+                </ol>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% include 'assets/footer.html' %}
+</body>
+</html>
